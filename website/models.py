@@ -4,6 +4,9 @@ from django.db import models
 
 
 class User(models.Model):
+    """
+    user table which i can login logout
+    """
     nickname = models.CharField(max_length=30, null=True, verbose_name="用户名")
     personal_introduction = models.TextField(verbose_name="个人简介")
     password = models.CharField(max_length=35, null=True)
