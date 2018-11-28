@@ -13,6 +13,9 @@ class User(models.Model):
     email = models.EmailField(verbose_name="邮箱")
     profile_picture = models.ImageField(verbose_name="头像")
 
+    def __str__(self):
+        return self.nickname
+
 
 class Book(models.Model):
     """
@@ -23,4 +26,7 @@ class Book(models.Model):
     image = models.ImageField(verbose_name="图片")
     created_time = models.DateField(null=True, verbose_name="创建时间")
     published_time = models.DateField(null=True, verbose_name="修改时间")
-    save_path = models.FilePathField("文件存储路径")
+    save_path = models.FilePathField(verbose_name="文件存储路径")
+
+    def __str__(self):
+        return self.bookname
